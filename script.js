@@ -1,45 +1,31 @@
-//your code here
 
-// JavaScript program to connect n
-// ropes with minimum cost
 
-function minCost(arr,n)
-{
-	// Create a priority queue
-		let pq = [];
+let ans = 0;
+const btn = document.querySelector(".submitInput");
 
-		// Adding items to the pQueue
-		for (let i = 0; i < n; i++) {
-			pq.push(arr[i]);
-		}
-		
-		pq.sort(function(a,b){return a-b;});
-		
-		// Initialize result
-		let res = 0;
+//function
 
-		// While size of priority queue
-		// is more than 1
-		while (pq.length > 1) {
-			// Extract shortest two ropes from pq
-			let first = pq.shift();
-			let second = pq.shift();
-
-			// Connect the ropes: update result
-			// and insert the new rope to pq
-			res += first + second;
-			pq.push(first + second);
-			pq.sort(function(a,b){return a-b;});
-		}
-
-		return res;
+function showResult(event) {
+  const values = document.querySelector(".textInput").value;
+  const temp = values.split(",");
+  let arr = [];
+  for (let i = 0; i < temp.length; i++) {
+    arr.push(Number(temp[i]));
+  }
+  arr.sort(function (a, b) {
+    return a - b;
+  });
+  while (arr.length > 1) {
+    let first = arr.shift();
+    let second = arr.shift();
+    ans += first + second;
+    arr.push(first + second);
+    arr.sort(function (a, b) {
+      return a - b;
+    });
+  }
+  document.querySelector("#result").textContent = ans;
+  console.log(ans);
 }
 
-// Driver program to test above function
-let len = [12,14,5,6,6,7];
-let size = len.length;
-console.log("minimum cost of ropes" + minCost(len, size));
-
-// This code is contributed by avanitrachhadiya2155
-
-
+btn.addEventListener("click", showResult);
