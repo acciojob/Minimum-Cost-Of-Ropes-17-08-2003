@@ -1,5 +1,4 @@
 //your code here
-<script>
 
 // JavaScript program to connect n
 // ropes with minimum cost
@@ -44,4 +43,4 @@ document.write("Total cost for connecting"
 
 // This code is contributed by avanitrachhadiya2155
 
-</script>
+
