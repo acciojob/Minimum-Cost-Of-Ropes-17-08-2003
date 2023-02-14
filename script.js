@@ -38,8 +38,7 @@ function minCost(arr,n)
 // Driver program to test above function
 let len = [12,14,5,6,6,7];
 let size = len.length;
-console.log("Total cost for connecting"
-						+ " ropes is " + minCost(len, size));
+console.log("minimum cost of ropes" + minCost(len, size));
 
 // This code is contributed by avanitrachhadiya2155
 
